@@ -33,6 +33,11 @@ return require('packer').startup(function(use)
 		use { 'Raimondi/delimitMate' }
 		use { 'neovim/nvim-lspconfig' }
 		use { 'glepnir/lspsaga.nvim' }
+		use { 'hrsh7th/nvim-cmp', branch = 'main' }
+		use { 'hrsh7th/cmp-nvim-lsp', branch = 'main' }
+		use { 'hrsh7th/cmp-buffer', branch = 'main' }
+		use { 'hrsh7th/cmp-path', branch = 'main' }
+		use { '' }
 		use {
 			'nvim-treesitter/nvim-treesitter',
 			run = ':TSUpdate'
