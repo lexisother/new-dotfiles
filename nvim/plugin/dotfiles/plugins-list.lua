@@ -8,7 +8,25 @@ return require('packer').startup(function(use)
 	use { 'wbthomason/packer.nvim' }
 
 	-- UI {{{
-		use { 'famiu/feline.nvim', tag = 'v0.1' }
+		use { 
+			'jacoborus/tender.vim',
+			config = function()
+				vim.cmd("colorscheme tender")
+			end
+		}
+		use { 
+			'famiu/feline.nvim',
+			branch = 'develop',
+			requires = {
+				'kyazdani42/nvim-web-devicons'
+			},
+		}
+		use {
+			'lewis6991/gitsigns.nvim',
+			requires = {
+				'nvim-lua/plenary.nvim'
+			},
+		}
 	-- }}}
 	
 	-- Editing {{{
