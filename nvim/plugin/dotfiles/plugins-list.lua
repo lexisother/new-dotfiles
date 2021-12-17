@@ -31,6 +31,9 @@ return require('packer').startup(function(use)
 	
 	-- Editing {{{
 		use {
+			'neovim/nvim-lspconfig'
+		}
+		use {
 			'nvim-treesitter/nvim-treesitter',
 			run = ':TSUpdate'
 		}
