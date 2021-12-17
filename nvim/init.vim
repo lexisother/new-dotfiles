@@ -13,4 +13,4 @@ function! s:configure_runtimepath() abort
 endfunction
 call s:configure_runtimepath()
 
-luafile init.lua
+luafile <sfile>:h/init.lua
