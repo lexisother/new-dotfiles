@@ -4,8 +4,18 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 return require('packer').startup(function(use)
+	-- Stop packer from trying to remove itself
 	use { 'wbthomason/packer.nvim' }
-	use { 'famiu/feline.nvim', tag = 'v0.1' }
+
+	-- UI {{{
+		use { 'famiu/feline.nvim', tag = 'v0.1' }
+	-- }}}
+
+	-- Misc {{{
+		use { 'dstein64/vim-startuptime' }
+	-- }}}
+	
+
 	-- Automatically install plugins after packer is installed
 	if packer_bootstrap then
 		require('packer').sync()
