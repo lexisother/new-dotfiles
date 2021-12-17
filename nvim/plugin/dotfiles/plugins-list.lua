@@ -10,6 +10,13 @@ return require('packer').startup(function(use)
 	-- UI {{{
 		use { 'famiu/feline.nvim', tag = 'v0.1' }
 	-- }}}
+	
+	-- Editing {{{
+		use {
+			'nvim-treesitter/nvim-treesitter',
+			run = ':TSUpdate'
+		}
+	-- }}}
 
 	-- Misc {{{
 		use { 'dstein64/vim-startuptime' }
