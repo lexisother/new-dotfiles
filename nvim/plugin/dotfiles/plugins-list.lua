@@ -35,8 +35,8 @@ return require('packer').startup(function(use)
 	
 	-- Editing {{{
 		use { 'Raimondi/delimitMate' }
+		use { 'tomtom/tcomment_vim' }
 		use { 'neovim/nvim-lspconfig' }
-		use { 'glepnir/lspsaga.nvim' }
 		use { 'hrsh7th/nvim-cmp', branch = 'main' }
 		use { 'hrsh7th/cmp-nvim-lsp', branch = 'main' }
 		use { 'hrsh7th/cmp-buffer', branch = 'main' }
