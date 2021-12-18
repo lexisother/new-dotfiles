@@ -29,6 +29,7 @@ local kind_icons = {
   TypeParameter = ""
 }
 
+-- Set up nvim-cmp
 -- <https://github.com/dmitmel/dotfiles/blob/d40d79699c3f8c9b1e4724dd52e46fc221952477/nvim/lua/dotfiles/completion.lua#L41>
 -- TODO: Add buffer source
 cmp.setup({
@@ -77,6 +78,7 @@ cmp.setup({
 	},
 	formatting = {
 		deprecated = false,
+		fields = { "kind", "abbr" },
 		format = function(entry, vim_item)
 			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
 			return vim_item

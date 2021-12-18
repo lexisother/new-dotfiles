@@ -9,10 +9,14 @@ return require('packer').startup(function(use)
 
 	-- UI {{{
 		use { 
-			'jacoborus/tender.vim',
+			'tomasiser/vim-code-dark',
 			config = function()
-				vim.cmd("colorscheme tender")
+				vim.cmd("colorscheme codedark")
 			end
+			--'jacoborus/tender.vim',
+			--config = function()
+			--	vim.cmd("colorscheme tender")
+			--end
 		}
 		use { 
 			'famiu/feline.nvim',
