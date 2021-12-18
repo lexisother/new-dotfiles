@@ -1,5 +1,34 @@
 local cmp = require("cmp")
 
+-- A table used for completion menu icons
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = ""
+}
+
 -- <https://github.com/dmitmel/dotfiles/blob/d40d79699c3f8c9b1e4724dd52e46fc221952477/nvim/lua/dotfiles/completion.lua#L41>
 -- TODO: Add buffer source
 cmp.setup({
@@ -48,5 +77,9 @@ cmp.setup({
 	},
 	formatting = {
 		deprecated = false,
+		format = function(entry, vim_item)
+			vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+			return vim_item
+		end
 	}
 })
