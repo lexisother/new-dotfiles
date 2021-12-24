@@ -25,16 +25,16 @@ return setmetatable({}, {
     end
     --]]
 
-    if type(module_name) ~= 'string' then
-      error(string.format('module_name: expected string, got %s', type(module_name)))
+    if type(module_name) ~= "string" then
+      error(string.format("module_name: expected string, got %s", type(module_name)))
     end
     local module_ref = rawget(self, module_name)
     if module_ref == nil then
       module_ref = {
-        name = module_name;
-        reloading = false;
-        reload_count = 0;
-        exports = {};
+        name = module_name,
+        reloading = false,
+        reload_count = 0,
+        exports = {},
       }
       rawset(self, module_name, module_ref)
     else
@@ -43,5 +43,5 @@ return setmetatable({}, {
       module_ref.reload_count = module_ref.reload_count + 1
     end
     return module_ref.exports, module_ref
-  end;
+  end,
 })
