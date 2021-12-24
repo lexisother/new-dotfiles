@@ -2,7 +2,6 @@ local options = {
   completeopt = { "menuone", "noselect" },
   mouse = "a",
   foldmethod = "marker",
-  branch = "develop",
 
   expandtab = true,
   shiftwidth = 2,
