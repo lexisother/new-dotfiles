@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
 		}
 		use { 
 			'famiu/feline.nvim',
-			branch = 'develop',
 			requires = {
 				'kyazdani42/nvim-web-devicons'
 			},
@@ -37,6 +36,7 @@ return require('packer').startup(function(use)
 		use { 'Raimondi/delimitMate' }
 		use { 'tomtom/tcomment_vim' }
 		use { 'neovim/nvim-lspconfig' }
+               use { 'jose-elias-alvarez/null-ls.nvim' }
 		use { 'hrsh7th/nvim-cmp', branch = 'main' }
 		use { 'hrsh7th/cmp-nvim-lsp', branch = 'main' }
 		use { 'hrsh7th/cmp-buffer', branch = 'main' }
