@@ -1,4 +1,5 @@
 local cmp = require("cmp")
+local snippy = require("snippy")
 
 -- A table used for completion menu icons
 local kind_icons = {
@@ -29,11 +30,7 @@ local kind_icons = {
   TypeParameter = "",
 }
 
-local has_words_before = function()
-  local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-  return col ~= 0
-    and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
-end
+snippy.setup({})
 
 -- Set up nvim-cmp
 -- <https://github.com/dmitmel/dotfiles/blob/d40d79699c3f8c9b1e4724dd52e46fc221952477/nvim/lua/dotfiles/completion.lua#L41>
@@ -49,29 +46,39 @@ cmp.setup({
   },
   mapping = {
     ["<CR>"] = cmp.mapping.confirm({ select = true }),
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
+    ["<Tab>"] = (function(default_mapping_func)
+      return cmp.mapping(function(fallback)
+        local selected_entry = cmp.get_selected_entry()
+        if not selected_entry and snippy.can_jump(1) then
+          snippy.next()
+        else
+          default_mapping_func(fallback)
+        end
+      end, { "i", "s" })
+    end)(cmp.mapping.select_next_item()),
 
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
+    ["<S-Tab>"] = (function(default_mapping_func)
+      return cmp.mapping(function(fallback)
+        local selected_entry = cmp.get_selected_entry()
+        if not selected_entry and snippy.can_jump(-1) then
+          snippy.previous()
+        else
+          default_mapping_func(fallback)
+        end
+      end, { "i", "s" })
+    end)(cmp.mapping.select_prev_item()),
+  },
+  snippet = {
+    expand = function(args)
+      snippy.expand_snippet(args.body)
+    end,
   },
   sources = {
     { name = "buffer" },
     { name = "path" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
+    { name = "snippy" },
   },
 })
 

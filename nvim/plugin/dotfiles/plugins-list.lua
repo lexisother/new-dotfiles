@@ -44,10 +44,12 @@ return require("packer").startup(function(use)
   use({ "tomtom/tcomment_vim" })
   use({ "neovim/nvim-lspconfig" })
   use({ "jose-elias-alvarez/null-ls.nvim" })
+  use({ "dcampos/nvim-snippy" })
   use({ "hrsh7th/nvim-cmp", branch = "main" })
   use({ "hrsh7th/cmp-nvim-lsp", branch = "main" })
   use({ "hrsh7th/cmp-buffer", branch = "main" })
   use({ "hrsh7th/cmp-path", branch = "main" })
+  use({ "dcampos/cmp-snippy" })
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
