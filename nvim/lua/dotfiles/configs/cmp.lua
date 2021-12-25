@@ -86,21 +86,6 @@ cmp.setup({
   },
 })
 
--- Command mode + search integration
-cmp.setup.cmdline("/", {
-  sources = {
-    { name = "buffer" },
-  },
-})
-
-cmp.setup.cmdline(":", {
-  sources = cmp.config.sources({
-    { name = "path" },
-  }, {
-    { name = "cmdline" },
-  }),
-})
-
 -- old config {{{
 -- cmp.setup({
 --   experimental = {
