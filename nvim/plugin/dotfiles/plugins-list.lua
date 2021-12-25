@@ -63,6 +63,14 @@ return require("packer").startup(function(use)
   })
   -- }}}
 
+  -- Text objects {{{
+  use({ "kana/vim-textobj-user" })
+  use({ "kana/vim-textobj-entire" })
+  use({ "kana/vim-textobj-line" })
+  use({ "kana/vim-textobj-indent" })
+  use({ "glts/vim-textobj-comment" })
+  -- }}}
+
   -- Misc {{{
   use({ "lewis6991/impatient.nvim" })
   use({ "dstein64/vim-startuptime" })
