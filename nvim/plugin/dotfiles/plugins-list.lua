@@ -48,7 +48,6 @@ return require("packer").startup(function(use)
   use({ "hrsh7th/cmp-nvim-lsp", branch = "main" })
   use({ "hrsh7th/cmp-buffer", branch = "main" })
   use({ "hrsh7th/cmp-path", branch = "main" })
-  use({ "" })
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
@@ -56,6 +55,7 @@ return require("packer").startup(function(use)
   -- }}}
 
   -- Misc {{{
+  use({ "lewis6991/impatient.nvim" })
   use({ "dstein64/vim-startuptime" })
   -- }}}
 

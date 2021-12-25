@@ -14,7 +14,7 @@ local function on_line(_, _, bufnr, row)
   local indent = vim.fn.indent(row + 1)
   for i = 1, indent - 1, 2 do
     vim.api.nvim_buf_set_extmark(bufnr, ilines, row, i - 1, {
-      virt_text = { { "│", "IndentLineColor" } },
+      virt_text = { { "│", "Statement" } },
       virt_text_pos = "overlay",
       ephemeral = true,
     })
