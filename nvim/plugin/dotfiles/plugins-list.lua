@@ -48,6 +48,7 @@ return require("packer").startup(function(use)
   -- Editing {{{
   use({ "Raimondi/delimitMate" })
   use({ "tomtom/tcomment_vim" })
+  use({ "tpope/vim-sleuth" })
   use({ "neovim/nvim-lspconfig" })
   use({ "williamboman/nvim-lsp-installer" })
   use({ "jose-elias-alvarez/null-ls.nvim" })

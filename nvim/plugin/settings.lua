@@ -8,6 +8,10 @@ local options = {
   softtabstop = 2,
   tabstop = 2,
 
+  autoindent = true,
+  smartindent = true,
+  smarttab = true,
+
   number = true,
   cursorline = true,
 }
