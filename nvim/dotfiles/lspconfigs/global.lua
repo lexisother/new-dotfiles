@@ -18,6 +18,11 @@ for serv, _ in pairs(lspservers) do
   end
 end
 
+-- Allow installation of 5 language servers at once
+lsp_installer.settings({
+  max_concurrent_installers = 5,
+})
+
 -- Set all of them up
 lsp_installer.on_server_ready(function(server)
   local opts = {}
