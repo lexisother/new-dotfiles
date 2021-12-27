@@ -8,7 +8,6 @@ table.insert(runtime_path, "lua/?/init.lua")
 local server_available, requested_server = servers.get_server("sumneko_lua")
 if server_available then
   requested_server:on_ready(function()
-    print("Hi")
     requested_server:setup({
       on_attach = utils.on_attach,
       settings = {
