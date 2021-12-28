@@ -1,3 +1,6 @@
+-- Make sure we can modify our global field later on
+_G.dotfiles = _G.dotfiles or {}
+
 -- Improve startup time + enable profiling data
 require("impatient").enable_profile()
 

@@ -10,7 +10,7 @@ local lspservers = {
   },
   ["eslint"] = {
     folder = "vscode-eslint",
-    manual = 0,
+    manual = 1,
   },
   ["spectral"] = {
     folder = "spectral",
