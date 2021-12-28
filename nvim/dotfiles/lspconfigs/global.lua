@@ -14,7 +14,7 @@ for serv, _ in pairs(lspservers) do
   if vim.fn.empty(vim.fn.glob(install_path .. "/" .. serv)) > 0 then
     lsp_installer.install(serv)
   else
-    return
+    break
   end
 end
 
@@ -28,7 +28,6 @@ lsp_installer.on_server_ready(function(server)
   local opts = {}
 
   if lspservers[server.name] == 1 then
-    return
   else
     server:setup(opts)
   end
