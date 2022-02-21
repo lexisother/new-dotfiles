@@ -9,7 +9,11 @@ local server_available, requested_server = servers.get_server("sumneko_lua")
 if server_available then
   requested_server:on_ready(function()
     requested_server:setup({
-      on_attach = utils.on_attach,
+      on_attach = function(client, bufnr)
+        utils.on_attach(client, bufnr)
+        client.resolved_capabilities.document_formatting = false
+        client.resolved_capabilities.document_range_formatting = false
+      end,
       settings = {
         Lua = {
           runtime = {
