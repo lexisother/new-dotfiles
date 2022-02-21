@@ -7,6 +7,9 @@ require("impatient").enable_profile()
 -- Prevent plugins from messing with this option
 vim.o.termguicolors = true
 
+-- Everyone must know, `,` is the leader!
+vim.g.mapleader = ","
+
 -- <https://github.com/Vapourium/dotfiles/blob/2d72a54ef185d2386dd7085feae03fba5f13c8dd/etc/nvim/init.lua#L4-L15>
 local init_modules = {
   "dotfiles.configs.feline",

@@ -49,15 +49,29 @@ return require("packer").startup(function(use)
   use({ "Raimondi/delimitMate" })
   use({ "tomtom/tcomment_vim" })
   use({ "tpope/vim-sleuth" })
+  use({ "nvim-telescope/telescope.nvim" })
   use({ "neovim/nvim-lspconfig" })
   use({ "williamboman/nvim-lsp-installer" })
   use({ "jose-elias-alvarez/null-ls.nvim" })
   use({ "dcampos/nvim-snippy" })
-  use({ "hrsh7th/nvim-cmp", branch = "main" })
-  use({ "hrsh7th/cmp-nvim-lsp", branch = "main" })
-  use({ "hrsh7th/cmp-buffer", branch = "main" })
-  use({ "hrsh7th/cmp-path", branch = "main" })
-  use({ "dcampos/cmp-snippy" })
+  use({
+    "hrsh7th/nvim-cmp",
+    branch = "main",
+    requires = {
+      {
+        "hrsh7th/cmp-nvim-lsp",
+        branch = "main",
+      },
+      { "hrsh7th/cmp-buffer", branch = "main" },
+      {
+        "hrsh7th/cmp-path",
+        branch = "main",
+      },
+      {
+        "dcampos/cmp-snippy",
+      },
+    },
+  })
   use({
     "nvim-treesitter/nvim-treesitter",
     run = ":TSUpdate",
