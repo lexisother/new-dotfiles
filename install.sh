@@ -27,4 +27,4 @@ git clone --recurse-submodules https://github.com/keanuplayz/dotfiles ~/.dotfile
 echo "export DOTFILES_DISABLE_WELCOME = 1" >> ~/.zshrc
 echo "source ~/.dotfiles/zsh/zshrc" >> ~/.zshrc
 
-chsh -s /usr/bin/zsh $USERNAME
+sudo chsh -s /usr/bin/zsh $USERNAME
