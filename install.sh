@@ -13,8 +13,6 @@ sudo apt-get install -y \
   unzip \
   apt-transport-https \
   lsb-release
-  
-sudo apt-get install -y \
   fonts-powerline \
   zsh
   
@@ -28,6 +26,5 @@ git clone --recurse-submodules https://github.com/keanuplayz/dotfiles ~/.dotfile
 
 echo "export DOTFILES_DISABLE_WELCOME = 1" >> ~/.zshrc
 echo "source ~/.dotfiles/zsh/zshrc" >> ~/.zshrc
-pip install colorama psutil distro
 
 chsh -s /usr/bin/zsh $USERNAME
